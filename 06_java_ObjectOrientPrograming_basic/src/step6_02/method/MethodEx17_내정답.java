@@ -46,7 +46,12 @@ class SpeedGame {
 	}
 	
 	void showCard() {
-		
+		for (int i = 0; i < front.length; i++) {
+			for (int j = 0; j < front[i].length; j++) {
+				System.out.print(front[i][j] + "\t");
+			}
+			System.out.println();
+		}
 		
 		
 	}
