@@ -52,10 +52,37 @@ class SpeedGame {
 			}
 			System.out.println();
 		}
+
+	}
+
+	
+	void selectCard() {
 		
+		System.out.print("y입력 : ");
+		int yIdx = scan.nextInt();
+		System.out.print("x입력 : ");
+		int xIdx = scan.nextInt();
 		
+		if( num == front[yIdx][xIdx]) {
+			if(num <= 9) {
+				front[yIdx][xIdx] = back[yIdx][xIdx];
+			}
+			else {
+				front[yIdx][xIdx] = 0;
+			}
+			num++;
+		}
 	}
 	
+	void run() { 
+		setNumber();
+		shuffleCard();
+		
+		while(true) {
+		if(num == 19) {System.out.println("게임종료"); break;}
+		selectCard();
+		}
+	}
 	
 	
 }
@@ -64,7 +91,10 @@ class SpeedGame {
 public class MethodEx17_내정답 {
 	public static void main(String[] args) {
 		
-
+		SpeedGame sg = new SpeedGame();
+		sg.run();
+		
+		
 	}
 
 }
